@@ -1,0 +1,4 @@
+# Preserve source-data bytes and GPUMD input formatting across platforms.
+* -text
+*.vasp whitespace=-blank-at-eol
+nep.txt whitespace=-blank-at-eol

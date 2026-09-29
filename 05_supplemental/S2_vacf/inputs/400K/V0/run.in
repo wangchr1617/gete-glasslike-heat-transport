@@ -1,0 +1,14 @@
+# GPUMD VACF: T=400K, Volume=V0
+# compute_dos → PDOS → Grüneisen γ(ω)
+potential       nep.txt
+velocity        400  seed  5310
+time_step       1
+
+# ---- Nose-Hoover chain 预平衡 (100 ps) ----
+ensemble        nvt_nhc 400 400 100
+run             100000
+
+# ---- 生产运行 (500 ps, compute_dos) ----
+ensemble        nvt_nhc 400 400 100
+compute_dos     5 2000 80 num_dos_points 2000
+run             500000

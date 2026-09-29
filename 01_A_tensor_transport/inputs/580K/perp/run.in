@@ -1,0 +1,15 @@
+# GPUMD HNEMD: Perp (Fe||x)
+# Temperature = 580 K  |  Driving force = (2.0e-04, 0.0e+00, 0.0e+00) 1/A
+# Total steps = 10000000  |  Output interval = 1000
+potential       nep.txt
+velocity        580  seed  71405
+time_step       1
+
+# ---- Nose-Hoover chain 预平衡 (无 dump_exyz) ----
+ensemble        nvt_nhc 580 580 100
+run             100000
+
+# ---- HNEMD 生产运行 (无 dump_exyz) ----
+ensemble        nvt_nhc 580 580 100
+compute_hnemd   1000 0.0002 0.0 0.0
+run             10000000

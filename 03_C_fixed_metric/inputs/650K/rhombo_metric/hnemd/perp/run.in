@@ -1,0 +1,14 @@
+# GPUMD fixed-cell counterfactual HNEMD
+# T=650 K; metric=rhombo_metric; Fe direction=perp
+# The cell metric is fixed, volume matched to the native 650 K cell.
+potential       nep.txt
+velocity        650 seed 26502
+time_step       1
+
+# Longer equilibration permits local coordinates to adapt to the imposed metric.
+ensemble        nvt_nhc 650 650 100
+run             500000
+
+ensemble        nvt_nhc 650 650 100
+compute_hnemd   1000 0.0002 0 0
+run             10000000

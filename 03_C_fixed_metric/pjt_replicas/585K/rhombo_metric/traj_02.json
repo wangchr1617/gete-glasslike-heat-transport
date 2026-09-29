@@ -1,0 +1,19 @@
+{
+  "temperature_K": 585,
+  "replica": 2,
+  "atoms": 23040,
+  "ge_sites": 11520,
+  "frames": 5000,
+  "dt_ps": 0.02,
+  "production_ps": 100.0,
+  "mean_local_pjt_A": 0.3513652971242921,
+  "sem_local_pjt_A": 2.130138603034185e-05,
+  "mean_collective_order_ratio": 0.3921953615825933,
+  "mean_nematic_order": 0.09644542348350688,
+  "self_correlation_plateau": 0.13085714471927895,
+  "connected_relaxation_time_ps": 0.0784782436618989,
+  "collective_relaxation_time_ps": 0.4294120790129257,
+  "low_frequency_weight_0_0p5_THz": 0.11419508378641524,
+  "pjt_spectral_peak_THz": 1.6600000000000001,
+  "max_initial_sixth_neighbour_A": 3.0918226968908202
+}

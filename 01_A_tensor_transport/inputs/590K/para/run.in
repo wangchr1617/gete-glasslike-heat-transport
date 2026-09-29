@@ -1,0 +1,15 @@
+# GPUMD HNEMD: Para (Fe||z)
+# Temperature = 590 K  |  Driving force = (0.0e+00, 0.0e+00, 2.0e-04) 1/A
+# Total steps = 10000000  |  Output interval = 1000
+potential       nep.txt
+velocity        590  seed  36353
+time_step       1
+
+# ---- Nose-Hoover chain 预平衡 (无 dump_exyz) ----
+ensemble        nvt_nhc 590 590 100
+run             100000
+
+# ---- HNEMD 生产运行 (无 dump_exyz) ----
+ensemble        nvt_nhc 590 590 100
+compute_hnemd   1000 0.0 0.0 0.0002
+run             10000000

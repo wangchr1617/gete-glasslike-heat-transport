@@ -1,0 +1,17 @@
+# GPUMD Modal SHC: T=585K, Traj=04
+# Same settings as the completed 300–800 K production set.
+# NEP cutoff: r_cut = 8.0 A (radial + angular)
+potential       nep.txt
+
+velocity        585  seed  339481
+time_step       0.5              # fs
+
+# ---- NVT-NHC equilibration (200 ps) ----
+ensemble        nvt_nhc 585 585 100
+run             400000
+
+# ---- NVE production with modal heat current (5 ns) ----
+# Sampling interval: 100 steps x 0.5 fs = 50 fs.
+ensemble        nve
+compute_gkma    100 1 2058 bin_size 1
+run             10000000

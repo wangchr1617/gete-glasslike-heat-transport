@@ -1,0 +1,15 @@
+# GPUMD: local PJT-vector dynamics; seed 35501
+# Fixed cell throughout; 0.5 fs time step.
+potential       nep.txt
+velocity        550 seed 35501
+time_step       0.5
+
+# NVT equilibration: 500 ps
+ensemble        nvt_nhc 550 550 100
+run             1000000
+
+# NVE production: 100 ps; positions every 20 fs (40 steps)
+ensemble        nve
+dump_exyz       40 0
+dump_thermo     2000
+run             200000
