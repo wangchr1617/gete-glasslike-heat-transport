@@ -1,17 +1,17 @@
-# GPUMD Modal SHC: T=600K, Traj=05
+# GPUMD GKMA: T=600K, Traj=05
 # compute_gkma → Green-Kubo Modal Analysis (κ mode decomposition)
 # NEP cutoff: r_cut = 8.0 A (radial + angular)
 potential       nep.txt
 
 velocity        600  seed  452917
-time_step       0.5              # fs (NEP r_cut=8A requires fine time step)
+time_step       0.5              # fs
 
 # ---- NVT-NHC equilibration (200 ps) ----
 ensemble        nvt_nhc 600 600 100
 run             400000
 
-# ---- NVE production with Modal SHC (5 ns) ----
-# NVE ensemble REQUIRED: thermostat would distort phonon populations
+# ---- NVE production with modal heat current (5 ns) ----
+# NVE production for equilibrium heat-current correlations
 # compute_gkma samples modal heat current every 100 steps (50 fs)
 ensemble        nve
 compute_gkma    100 1 2058 bin_size 1

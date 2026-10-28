@@ -1,0 +1,4 @@
+-r requirements.txt
+ase==3.29.0
+hiphive==1.5
+scikit-learn==1.9.1

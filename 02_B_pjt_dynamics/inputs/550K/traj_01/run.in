@@ -1,5 +1,5 @@
 # GPUMD: time-resolved local PJT-vector dynamics
-# T=550 K, replica=01; no generic phonon/current spectrum is recomputed.
+# T=550 K, replica=01.
 potential       nep.txt
 velocity        550 seed 15501
 time_step       0.5

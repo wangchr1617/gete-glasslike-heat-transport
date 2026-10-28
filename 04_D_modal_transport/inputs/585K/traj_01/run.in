@@ -1,5 +1,4 @@
-# GPUMD Modal SHC: T=585K, Traj=01
-# Same settings as the completed 300–800 K production set.
+# GPUMD GKMA: T=585K, Traj=01
 # NEP cutoff: r_cut = 8.0 A (radial + angular)
 potential       nep.txt
 

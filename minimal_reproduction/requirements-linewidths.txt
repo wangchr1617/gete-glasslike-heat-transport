@@ -1,0 +1,5 @@
+# Install in a separate environment: phono3py 4.3.3 requires phonopy <4.4.
+phono3py==4.3.3
+phonopy==4.3.1
+numpy==2.5.4
+h5py==3.16.0

@@ -1,0 +1,9 @@
+# CPU table and figure reproduction; tested with Python 3.12.
+numpy==2.5.4
+scipy==1.18.1
+pandas==3.1.0
+matplotlib==3.11.2
+seaborn==0.13.2
+h5py==3.16.0
+phonopy==4.8.3
+seekpath==2.2.2
